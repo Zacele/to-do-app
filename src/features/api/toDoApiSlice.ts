@@ -4,7 +4,7 @@ import { TTodo } from '../../types/todo'
 export const toDoApisSlice = createApi({
   reducerPath: 'toDoApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:4000/',
+    baseUrl: process.env.REACT_APP_API_ENDPOINT,
   }),
   tagTypes: ['Todos'],
   endpoints: (builder) => ({

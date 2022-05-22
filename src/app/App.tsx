@@ -41,7 +41,7 @@ function App(): JSX.Element {
       <div className="mt-6">
         {isLoading && <Loading />}
         {todos?.map((todo: TTodo) => (
-          <TodoItem todo={todo} />
+          <TodoItem todo={todo} key={todo.id} />
         ))}
       </div>
     </div>
