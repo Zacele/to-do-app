@@ -25,4 +25,4 @@ Install this project with yarn
 
 ## Demo
 
-Demo link: https://to-do-a956gkvon-lekhoa2209.vercel.app
+Demo link: https://to-do-app-olive-kappa.vercel.app/
