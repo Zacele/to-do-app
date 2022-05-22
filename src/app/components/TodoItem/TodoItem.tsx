@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import React from 'react'
 import { TTodo } from '../../../types/todo'
 import {
@@ -5,26 +6,24 @@ import {
   useDeleteTodoMutation,
 } from '../../../features/api/toDoApiSlice'
 
-interface ITodoItem {
+const TodoItem: React.FC<{
   todo: TTodo
-}
-
-const TodoItem: React.FC<ITodoItem> = ({ todo }) => {
+}> = ({ todo }) => {
   const [updateTodo] = useUpdateTodoMutation()
   const [deleteTodo] = useDeleteTodoMutation()
 
   const onToggle = React.useCallback(
-    (todoItem: TTodo) => {
+    (todo: TTodo) => {
       updateTodo({ ...todo, done: !todo.done })
     },
-    [todo, updateTodo]
+    [updateTodo]
   )
 
   const onDelete = React.useCallback(
-    (todoItem: TTodo) => {
+    (todo: TTodo) => {
       deleteTodo({ ...todo, done: !todo.done })
     },
-    [deleteTodo, todo]
+    [deleteTodo]
   )
 
   return (

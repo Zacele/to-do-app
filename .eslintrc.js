@@ -30,6 +30,8 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
     'prettier/prettier': [
       'error',
       {
