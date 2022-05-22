@@ -1,2 +1,5 @@
 *.css
 *.svg
+.eslintrc.js
+postcss.config.js
+tailwind.config.js
