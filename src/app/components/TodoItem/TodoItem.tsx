@@ -9,8 +9,8 @@ import {
 const TodoItem: React.FC<{
   todo: TTodo
 }> = ({ todo }) => {
-  const [updateTodo] = useUpdateTodoMutation()
-  const [deleteTodo] = useDeleteTodoMutation()
+  const [updateTodo, { isLoading: isToggleing }] = useUpdateTodoMutation()
+  const [deleteTodo, { isLoading: isDeleting }] = useDeleteTodoMutation()
 
   const onToggle = React.useCallback(
     (todo: TTodo) => {
@@ -32,6 +32,7 @@ const TodoItem: React.FC<{
         <input
           type="checkbox"
           className="checkbox"
+          disabled={isToggleing}
           checked={todo.done}
           onChange={() => onToggle(todo)}
         />
@@ -43,7 +44,9 @@ const TodoItem: React.FC<{
           {todo.text}
         </p>
         <button
-          className="btn btn-sm btn-outline btn-error"
+          className={`btn btn-sm btn-outline btn-error ${
+            isDeleting ? 'loading btn-disabled' : ''
+          }`}
           onClick={() => onDelete(todo)}
         >
           Remove
