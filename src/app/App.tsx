@@ -34,7 +34,7 @@ function App(): JSX.Element {
 
   return (
     <div className="container mx-auto">
-      <div className="w-full p-6 bg-white rounded shadow">
+      <div className="w-full p-6 bg-transparent rounded">
         <div className="mb-4">
           <h1 className="italic font-bold">Todo List</h1>
           <InputField isLoading={isLoading} />
